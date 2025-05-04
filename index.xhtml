@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookForm - Wikidata Book Entry</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>BookForm</h1>
+        <!-- <img src="bookform-logo.svg"/> -->
+        <p>Enter information about a book to generate QuickStatements instructions to add it to Wikidata.</p>
+    </header>
+    <main>
+        <form id="book-form" onsubmit="handleFormSubmit(event)">
+            <h2>Book information</h2>
+
+            <fieldset>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required="required" />
+            </fieldset>
+
+            <fieldset>
+                <label for="author-name">Author Name:</label>
+                <input type="text" id="author-name" name="author-name" required="required" />
+            </fieldset>
+
+            <fieldset>
+                <label for="year">Publication Year:</label>
+                <input type="number" id="year" name="year" min="1000" max="2025" required="required" />
+            </fieldset>
+
+            <fieldset>
+                <label for="isbn">ISBN:</label>
+                <input type="text" id="isbn" name="isbn" placeholder="Optional" />
+            </fieldset>
+
+            <fieldset>
+                <label for="publisher">Publisher:</label>
+                <input type="text" id="publisher" name="publisher" placeholder="Optional" />
+            </fieldset>
+
+            <fieldset>
+                <label for="language">Language:</label>
+                <input type="text" id="language" name="language" placeholder="Optional" />
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit" id="submit-button">Generate QuickStatements</button>
+                <button type="reset" class="btn btn-destructive">Clear Form</button>
+            </div>
+        </form>
+
+        <div id="result" class="hidden">
+            <h2>QuickStatements Instructions</h2>
+            <p class="help-text">
+                Copy the text below and paste it into
+                <a href="https://qs-dev.toolforge.org/" target="_blank">QuickStatements</a>
+                to create the items in Wikidata.
+            </p>
+            <pre id="quickstatements-commands" contenteditable="true"></pre>
+            <button id="copy-button" onclick="copyToClipboard()">Copy to Clipboard</button>
+        </div>
+    </main>
+
+    <footer>
+        <p><a href="https://github.com/waldyrious/bookform" target="_blank">Source code</a></p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+@import url('https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css');
+
+footer {
+	background: var(--nc-bg-2);
+	margin: 2rem calc(0px - (50vw - 50%)) -2rem;
+	padding: 2rem calc(50vw - 50%) 2rem;
+	text-align: center;
+	border-top: 1px solid var(--nc-bg-3);
+}
+
+fieldset {
+	margin: unset;
+	padding: unset;
+	border: unset;
+}
+
+button[type="reset"] {
+	background: #d94563;
+	&:hover {
+		background: crimson;
+	}
+}
+
+::selection {
+	background: silver;
+	color: revert;
+}
+
+.hidden {
+	display: none;
+}
+
+label:has(+input[required]):before {
+	content: '*';
+	color: crimson;
+	margin-right: -1em;
+	position: relative;
+	right: 0.75em;
+	width: 1em;
+	display: inline-block;
+}

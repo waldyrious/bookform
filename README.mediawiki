@@ -1,0 +1,82 @@
+== BookForm ==
+
+This tool provides a convenient web interface to introduce data about individual books to Wikidata.
+
+This is similar in spirit to the Cradle tool, but is specifically designed for books, and is able to create multiple items at once (for the book as a work, the specific edition, and the author).
+
+=== How to use it ===
+
+To use this, you need to have a Wikimedia account and be logged in.
+
+'''Attention:''' This tool is not yet available for public use. It is currently in development and testing.
+
+# Go to https://bookform.toolforge.org and fill in the form with the relevant information about the book.
+# Click the "Generate QuickStatements" button and copy the resulting text.
+# Go to the [https://tools.wmflabs.org/quickstatements/ QuickStatements tool] and log in with your Wikimedia account.
+# Paste the QuickStatements instructions into the input box and click "Run" to execute the instructions and create the items on Wikidata.
+
+=== How it works ===
+
+Currently, it does not make edits directly to Wikidata;
+rather, it creates QuickStatements instructions that can be copied and pasted into the QuickStatements tool.
+
+These statements create three items on Wikidata, according to a common model for bibliographic data:
+
+==== Author ====
+
+{| class="wikitable"
+|-
+! Property !! Value
+|-
+! [https://www.wikidata.org/wiki/Property:P31 instance of (P31)]
+| [https://www.wikidata.org/wiki/Q5 human (Q5)]
+|-
+! [https://www.wikidata.org/wiki/Property:P106 occupation (P106)]
+| [https://www.wikidata.org/wiki/Q36180 writer (Q36180)]
+|}
+
+==== Work ====
+
+{| class="wikitable"
+! Property !! Value !! Example
+|-
+! [https://www.wikidata.org/wiki/Property:P31 instance of (P31)]
+| colspan="2" | [https://www.wikidata.org/wiki/Q47461344 written work (Q47461344)]
+|-
+! [https://www.wikidata.org/wiki/Property:P1476 title (P1476)]
+| &lt;a string&gt;
+| "The Adventures of Tom Sawywer"
+|-
+! [https://www.wikidata.org/wiki/Property:P50 author (P50)]
+| &lt;an instance of [https://www.wikidata.org/wiki/Q5 human (Q5)]&gt;
+| [https://www.wikidata.org/wiki/Q7245 Mark Twain (Q7245)]
+|}
+
+==== Edition ====
+
+{| class="wikitable"
+|-
+! Property !! Value !! Example
+|-
+! [https://www.wikidata.org/wiki/Property:P31 instance of (P31)]
+| colspan="2" | [https://www.wikidata.org/wiki/Q3331189 version, edition or translation (Q3331189)])
+|-
+! [https://www.wikidata.org/wiki/Property:P577 publication date (P577)]
+| &lt;a year&gt;
+| 1876
+|-
+! [https://www.wikidata.org/wiki/Property:P629 edition or translation of (P629)]
+| &lt;the instance of [https://www.wikidata.org/wiki/Q47461344 written work (Q47461344)] created above&gt;
+|
+|-
+! [https://www.wikidata.org/wiki/Property:P212 ISBN-13 (P212)]
+| &lt;a string&gt;
+| "978-3-16-148410-0"
+|}
+
+== Limitatons ==
+
+* This tool is not yet deployed to Toolforge :)
+* It does not auto-complete any existing information from Wikidata or other sources (e.g. from ISBN).
+* It does not check for duplicates.
+* It creates multiple items but does not connect them together
