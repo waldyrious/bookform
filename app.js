@@ -21,10 +21,7 @@ function handleFormSubmit(event) {
     const commandsContainer = document.getElementById('quickstatements-commands');
     commandsContainer.innerHTML = quickStatements;
 
-    // Unhide the results section and scroll it into view
-    const resultDiv = document.getElementById('result');
-    resultDiv.classList.remove('hidden');
-    resultDiv.scrollIntoView({ behavior: 'smooth' });
+    toggleResults('true');
 }
 
 // Generate QuickStatements to create the relevant Wikidata items
@@ -78,4 +75,18 @@ function copyToClipboard() {
                 copyButton.textContent = originalText;
             }, 2000);
         })
+}
+
+function toggleResults(visible) {
+    const resultDiv = document.getElementById('result');
+
+    if (visible === 'true') {
+        // Unhide the results section and scroll it into view
+        resultDiv.classList.remove('hidden');
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+    else {
+        // Hide the results section
+        resultDiv.classList.add('hidden');
+    }
 }
