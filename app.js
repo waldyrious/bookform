@@ -47,7 +47,7 @@ function generateQuickStatements(formFields) {
     // Finally, the edition item
     statements.push('');
     statements.push('CREATE');
-    statements.push(`LAST|Len|"${formFields.title}" (Edition)`); // Label in English
+    statements.push(`LAST|Len|"${formFields.title}"`); // Label in English
     statements.push(`LAST|Den|"Edition of ${formFields.title}"`); // Description in English
     statements.push(`LAST|P31|Q3331189`); // Instance of version, edition or translation
     statements.push(`LAST|P629|LAST2`); // Edition of the work item created above (NOT YET SUPPORTED BY QS3!)
