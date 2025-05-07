@@ -83,10 +83,3 @@ These statements create three items on Wikidata, according to a common model for
 | &lt;a string&gt;
 | "978-3-16-148410-0"
 |}
-
-== Limitatons ==
-
-* This tool is not yet deployed to Toolforge :)
-* It does not auto-complete any existing information from Wikidata or other sources (e.g. from ISBN).
-* It does not check for duplicates.
-* It creates multiple items but does not connect them together
