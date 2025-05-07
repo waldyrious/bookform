@@ -8,7 +8,17 @@ This is similar in spirit to the Cradle tool, but is specifically designed for b
 
 To use this, you need to have a Wikimedia account and be logged in.
 
-'''Attention:''' This tool is not yet available for public use. It is currently in development and testing.
+{|
+! Attention: Not ready to use
+|-
+| This tool is not yet ready for production use.
+It is currently in development and testing.
+You can try the interface out at https://waldyrious.github.io/bookform,
+but do not actually use the resulting QuickStatements commands to make edits on Wikidata.
+
+Once [https://github.com/waldyrious/bookform/milestone/1 these critical issues] are resolved,
+it will be deployed in a public and well-advertised location.
+|}
 
 # Go to https://bookform.toolforge.org and fill in the form with the relevant information about the book.
 # Click the "Generate QuickStatements" button and copy the resulting text.
