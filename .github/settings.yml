@@ -1,0 +1,9 @@
+# This file allows controlling the repository settings in a transparent and version-tracked way.
+# Any valid settings defined here are applied to the repository by https://probot.github.io/apps/settings/
+# See all available settings in https://probot.github.io/apps/settings/
+# and https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#update-a-repository--parameters
+
+repository:
+
+  # The name of the repository. Changing this will rename the repository.
+  name: bookform
